@@ -5,7 +5,7 @@ Portafolio web estilo **One-Page** con navegación por saltos entre 5 secciones,
 
 ---
 
-## ✅ Requisitos de la Parte I y dónde se cumplen
+## Requisitos de la Parte I y dónde se cumplen
 
 | # | Requisito (5 pts c/u) | Implementación |
 |---|------------------------|----------------|
@@ -26,7 +26,7 @@ Todo el sitio es **responsivo** (móvil, tablet, escritorio).
 
 ---
 
-## 🎨 Regla 60-30-10 (paleta)
+## Regla 60-30-10 (paleta)
 
 - **60% Principal:** `#1a2238` (azul marino profundo)
 - **30% Secundario:** `#394867` (azul acero)
@@ -37,7 +37,7 @@ El logotipo personal (`src/components/Logo.jsx` y `public/logo.svg`) define esta
 
 ---
 
-## 🚀 Cómo ejecutar
+## Cómo ejecutar
 
 ```bash
 npm install      # instalar dependencias
@@ -48,42 +48,7 @@ npm run preview  # previsualizar el build
 
 ---
 
-## ⚙️ Personalización (IMPORTANTE antes de entregar)
-
-Edita **`src/data/config.js`** con tus datos reales:
-
-- `email` → correo donde llegarán los mensajes del formulario.
-- `whatsapp` → tu número en formato internacional sin `+` ni espacios (ej. `50688887777`).
-- `github` y `linkedin` → URLs de tus perfiles.
-- `skills`, `stats` → tus habilidades y estadísticas.
-
-Coloca tu currículum como `public/cv-alison.pdf` (o ajusta `cvFile`).
-Puedes editar los textos y proyectos en `src/i18n/translations.js`.
-
-### Formulario de contacto
-Usa [FormSubmit](https://formsubmit.co) (sin backend). La **primera vez** que alguien envía el
-formulario, FormSubmit manda un correo de activación a tu dirección: confírmalo una vez y a partir
-de ahí todos los mensajes llegarán a tu buzón.
-
----
-
-## 🌐 Despliegue en GitHub Pages
-
-1. Crea un repositorio en GitHub y sube el proyecto.
-2. En `vite.config.js`, ajusta `base` al nombre del repo, por ejemplo `base: '/mi-portafolio/'`.
-3. Ejecuta:
-   ```bash
-   npm run build
-   npm run deploy
-   ```
-   (el script `deploy` usa `gh-pages` para publicar la carpeta `dist`).
-4. En GitHub → Settings → Pages, selecciona la rama `gh-pages`.
-
-También puedes desplegar en **Vercel** o **Netlify** importando el repositorio.
-
----
-
-## 📦 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 PortafolioProfesionalAlison/
