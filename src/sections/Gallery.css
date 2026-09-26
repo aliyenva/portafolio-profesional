@@ -121,3 +121,27 @@
   border: 1px solid var(--secundario-claro);
   color: var(--texto-suave);
 }
+
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  padding: 0.35rem 0.8rem;
+  border: 1.5px solid var(--color-acento);
+  border-radius: 50px;
+  transition: background var(--trans), color var(--trans);
+}
+
+.project-card__link:hover {
+  background: var(--color-acento);
+  color: var(--principal-oscuro);
+}

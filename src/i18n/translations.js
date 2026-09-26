@@ -41,10 +41,14 @@ export const translations = {
       },
       items: [
         {
-          title: 'Sistema de Gestión Académica',
+          title: 'Pied Piper',
           type: 'group',
-          tags: ['React', 'Node.js', 'MySQL'],
-          desc: 'Plataforma grupal para administrar cursos, notas y matrículas. Logro: reducción del 40% en tiempos de registro.',
+          tags: ['React', 'Node.js', 'API REST'],
+          desc: 'Proyecto grupal full-stack con frontend en React y backend con API REST. Logro: arquitectura separada cliente-servidor totalmente integrada.',
+          links: [
+            { label: 'Frontend', url: 'https://github.com/Alli293/piedpiper-frontend' },
+            { label: 'Backend', url: 'https://github.com/Alli293/piedpiper-backend' },
+          ],
         },
         {
           title: 'App de Finanzas Personales',
@@ -178,10 +182,14 @@ export const translations = {
       },
       items: [
         {
-          title: 'Academic Management System',
+          title: 'Pied Piper',
           type: 'group',
-          tags: ['React', 'Node.js', 'MySQL'],
-          desc: 'Group platform to manage courses, grades and enrollment. Achievement: 40% reduction in registration time.',
+          tags: ['React', 'Node.js', 'REST API'],
+          desc: 'Full-stack group project with a React frontend and a REST API backend. Achievement: fully integrated client-server architecture.',
+          links: [
+            { label: 'Frontend', url: 'https://github.com/Alli293/piedpiper-frontend' },
+            { label: 'Backend', url: 'https://github.com/Alli293/piedpiper-backend' },
+          ],
         },
         {
           title: 'Personal Finance App',

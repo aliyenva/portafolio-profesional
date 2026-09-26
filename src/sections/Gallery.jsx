@@ -65,6 +65,22 @@ export default function Gallery() {
                     <li key={tag}>{tag}</li>
                   ))}
                 </ul>
+                {item.links && item.links.length > 0 && (
+                  <div className="project-card__links">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-card__link"
+                      >
+                        {link.label}
+                        <span aria-hidden="true"> ↗</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </article>
           ))}
