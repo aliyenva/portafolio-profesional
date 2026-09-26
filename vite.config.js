@@ -7,5 +7,5 @@ import react from '@vitejs/plugin-react'
 // pon base: '/mi-portafolio/'
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/portafolio-profesional/',
 })
