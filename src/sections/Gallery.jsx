@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext.jsx'
 import './Gallery.css'
 
@@ -6,10 +6,24 @@ import './Gallery.css'
 export default function Gallery() {
   const { t } = useLanguage()
   const [filter, setFilter] = useState('all')
+  const gridRef = useRef(null)
 
   const items = t('gallery.items') // array traducido
   const filtered =
     filter === 'all' ? items : items.filter((i) => i.type === filter)
+
+  // Cada vez que cambia el filtro (o el idioma) las tarjetas se vuelven a
+  // montar. Aquí forzamos su aparición para que el reveal global no las deje
+  // ocultas. Un frame después añadimos .visible a las tarjetas visibles.
+  useEffect(() => {
+    const grid = gridRef.current
+    if (!grid) return
+    const cards = grid.querySelectorAll('.project-card')
+    const id = requestAnimationFrame(() => {
+      cards.forEach((card) => card.classList.add('visible'))
+    })
+    return () => cancelAnimationFrame(id)
+  }, [filter, items])
 
   const filters = [
     { id: 'all', label: t('gallery.filters.all') },
@@ -40,11 +54,11 @@ export default function Gallery() {
           ))}
         </div>
 
-        <div className="gallery__grid">
+        <div className="gallery__grid" ref={gridRef}>
           {filtered.map((item, idx) => (
             <article
               className="project-card reveal"
-              key={item.title}
+              key={`${filter}-${item.title}`}
               style={{ transitionDelay: `${idx * 0.06}s` }}
             >
               <div className="project-card__thumb">

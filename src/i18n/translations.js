@@ -41,10 +41,10 @@ export const translations = {
       },
       items: [
         {
-          title: 'Pied Piper',
+          title: 'CarbonHub (Pied Piper)',
           type: 'group',
-          tags: ['React', 'Node.js', 'API REST'],
-          desc: 'Proyecto grupal full-stack con frontend en React y backend con API REST. Logro: arquitectura separada cliente-servidor totalmente integrada.',
+          tags: ['Angular', 'Spring Boot', 'PostgreSQL', 'JWT', 'Spring AI'],
+          desc: 'Proyecto grupal full-stack para la gestión de huella de carbono. Frontend en Angular (TypeScript + SCSS) que consume una API REST en Spring Boot 3.5 con PostgreSQL, autenticación JWT con roles y funcionalidades asistidas por IA (Spring AI + Google Gemini). Incluye despliegue con Docker. Logro: arquitectura cliente-servidor segura e integrada con IA.',
           links: [
             { label: 'Frontend', url: 'https://github.com/Alli293/piedpiper-frontend' },
             { label: 'Backend', url: 'https://github.com/Alli293/piedpiper-backend' },
@@ -182,10 +182,10 @@ export const translations = {
       },
       items: [
         {
-          title: 'Pied Piper',
+          title: 'CarbonHub (Pied Piper)',
           type: 'group',
-          tags: ['React', 'Node.js', 'REST API'],
-          desc: 'Full-stack group project with a React frontend and a REST API backend. Achievement: fully integrated client-server architecture.',
+          tags: ['Angular', 'Spring Boot', 'PostgreSQL', 'JWT', 'Spring AI'],
+          desc: 'Full-stack group project for carbon footprint management. An Angular frontend (TypeScript + SCSS) consuming a Spring Boot 3.5 REST API with PostgreSQL, JWT authentication with roles and AI-assisted features (Spring AI + Google Gemini). Includes Docker deployment. Achievement: secure client-server architecture integrated with AI.',
           links: [
             { label: 'Frontend', url: 'https://github.com/Alli293/piedpiper-frontend' },
             { label: 'Backend', url: 'https://github.com/Alli293/piedpiper-backend' },
