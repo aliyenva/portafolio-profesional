@@ -1,0 +1,66 @@
+/* Chat flotante de WhatsApp */
+.whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  box-shadow: var(--sombra-md);
+  animation: pulse 2.5s infinite;
+  transition: transform var(--trans);
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* Botón scrolltop */
+.scrolltop {
+  position: fixed;
+  right: 22px;
+  bottom: 92px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-acento);
+  color: var(--principal-oscuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  box-shadow: var(--sombra-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity var(--trans), transform var(--trans), visibility var(--trans);
+}
+
+.scrolltop--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scrolltop:hover {
+  background: var(--acento-oscuro);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 480px) {
+  .whatsapp {
+    width: 52px;
+    height: 52px;
+  }
+  .scrolltop {
+    bottom: 84px;
+    width: 44px;
+    height: 44px;
+  }
+}

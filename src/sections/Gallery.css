@@ -1,0 +1,123 @@
+.gallery__filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.gallery__filter {
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  background: transparent;
+  border: 1.5px solid var(--secundario-claro);
+  color: var(--texto-suave);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--trans);
+}
+
+.gallery__filter:hover {
+  border-color: var(--color-acento);
+  color: var(--texto-claro);
+}
+
+.gallery__filter.is-active {
+  background: var(--color-acento);
+  border-color: var(--color-acento);
+  color: var(--principal-oscuro);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+.project-card {
+  background: var(--principal-claro);
+  border: 1px solid rgba(76, 95, 138, 0.4);
+  border-radius: var(--radio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans), box-shadow var(--trans), opacity 0.7s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-md);
+}
+
+.project-card__thumb {
+  position: relative;
+  height: 140px;
+  background: linear-gradient(135deg, var(--color-secundario), var(--principal-oscuro));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card__icon {
+  font-family: var(--fuente-titulo);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--color-acento);
+  opacity: 0.85;
+}
+
+.project-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-card__badge--group {
+  background: var(--color-acento);
+  color: var(--principal-oscuro);
+}
+
+.project-card__badge--individual {
+  background: var(--secundario-claro);
+  color: var(--texto-claro);
+}
+
+.project-card__body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+}
+
+.project-card__title {
+  font-size: 1.2rem;
+  color: var(--texto-claro);
+}
+
+.project-card__desc {
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+  flex: 1;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-card__tags li {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: var(--color-principal);
+  border: 1px solid var(--secundario-claro);
+  color: var(--texto-suave);
+}

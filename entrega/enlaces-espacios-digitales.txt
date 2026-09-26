@@ -1,0 +1,21 @@
+====================================================================
+ENTREGA PARTE II - ENLACES DE ESPACIOS DIGITALES (GITHUB - LINKEDIN)
+BISOFT-23 Portafolio Profesional - Universidad CENFOTEC - C3-2026
+====================================================================
+
+Nombre del estudiante: Alison
+Fecha de entrega: sabado 21/11/2026
+
+--------------------------------------------------------------------
+1) REPOSITORIO GITHUB (con toda la estructura de carpetas y archivos):
+   https://github.com/aliyenva/NOMBRE-DEL-REPO
+
+2) ENLACE WEB EXTERNO DEL PORTAFOLIO (GitHub Pages):
+   https://aliyenva.github.io/NOMBRE-DEL-REPO/
+
+3) PERFIL DE LINKEDIN (red laboral, con banner y avatar completos):
+   https://www.linkedin.com/in/aliyenva/
+--------------------------------------------------------------------
+
+NOTA: Reemplaza "NOMBRE-DEL-REPO" por el nombre real del repositorio que
+crees en GitHub antes de subir este archivo a Moodle (semana 1).

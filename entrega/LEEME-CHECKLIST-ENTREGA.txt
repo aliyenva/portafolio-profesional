@@ -1,0 +1,40 @@
+====================================================================
+CHECKLIST DE ENTREGA - EXAMEN PORTAFOLIO PROFESIONAL
+BISOFT-23 - Universidad CENFOTEC - C3-2026 - Docente: Francisco Jimenez
+====================================================================
+
+FECHA UNICA DE ENTREGA: sabado 21/11/2026, a partir de las 7:00 a.m.
+(No se recibe antes ni despues. Al subir, enviar correo de confirmacion al docente.)
+
+Se sube en Moodle, SEMANA 1, por ARCHIVOS INDIVIDUALES:
+
+[ ] 1. Pantalla JPG que demuestre la RESPONSIVIDAD del portafolio.       (5 pts)
+       -> Toma capturas en movil/tablet/escritorio y guardalas como .jpg
+
+[ ] 2. Enlace web externo del portafolio usando GITHUB PAGE.             (10 pts)
+       -> Ver: entrega/enlaces-espacios-digitales.txt
+
+[ ] 3. Enlaces de los espacios digitales GITHUB - LINKEDIN.              (5 pts)
+       -> Archivo: entrega/enlaces-espacios-digitales.txt
+       -> LinkedIn debe tener banner y avatar completos.
+
+[ ] 4. Enlace de un VIDEO MP4 explicativo del portafolio.                (10 pts)
+       -> Archivo: entrega/enlace-video-mp4.txt
+       -> Debes salir en el video y escucharse bien el audio.
+
+[ ] 5. Archivo ZIP con TODOS los archivos usados en el desarrollo.       (10 pts)
+       -> Comprime toda la carpeta del proyecto EXCLUYENDO node_modules y dist.
+
+--------------------------------------------------------------------
+PARTE I (60 pts) - ya implementada en el codigo:
+  One-page, semantica, 60-30-10, 5 secciones, animaciones, switch de idioma,
+  interactividad, scrolltop, WhatsApp, galeria y formulario validado.
+
+TOTAL: 100 puntos.
+--------------------------------------------------------------------
+
+ANTES DE ENTREGAR, EDITA src/data/config.js con:
+  - tu correo real (formulario)
+  - tu numero de WhatsApp
+  - tus URLs de GitHub y LinkedIn
+Y coloca tu CV en public/cv-alison.pdf

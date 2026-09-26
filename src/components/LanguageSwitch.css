@@ -1,0 +1,49 @@
+.lang-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 84px;
+  height: 36px;
+  padding: 4px;
+  border-radius: 50px;
+  background: var(--principal-oscuro);
+  border: 1px solid var(--secundario-claro);
+  transition: background var(--trans);
+}
+
+/* Pastilla que se desliza DETRÁS de las etiquetas */
+.lang-switch__thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  border-radius: 50px;
+  background: var(--color-acento);
+  box-shadow: var(--sombra-sm);
+  transition: transform var(--trans);
+  z-index: 0;
+}
+
+.lang-switch.en .lang-switch__thumb {
+  transform: translateX(100%);
+}
+
+/* Etiquetas fijas ES / EN, cada una ocupa la mitad */
+.lang-switch__option {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+  transition: color var(--trans);
+  user-select: none;
+}
+
+/* La opción activa se ve oscura sobre la pastilla naranja */
+.lang-switch__option.is-active {
+  color: var(--principal-oscuro);
+  font-weight: 800;
+}

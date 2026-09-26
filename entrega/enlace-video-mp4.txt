@@ -1,0 +1,27 @@
+====================================================================
+ENTREGA PARTE II - ENLACE DEL VIDEO MP4 EXPLICATIVO DEL PORTAFOLIO
+BISOFT-23 Portafolio Profesional - Universidad CENFOTEC - C3-2026
+====================================================================
+
+Nombre del estudiante: Alison
+Fecha de entrega: sabado 21/11/2026
+
+--------------------------------------------------------------------
+ENLACE DEL VIDEO MP4 EXPLICATIVO:
+   https://PEGA-AQUI-EL-ENLACE-DE-TU-VIDEO
+--------------------------------------------------------------------
+
+GUION SUGERIDO PARA EL VIDEO (debes salir en camara y escucharse bien el audio):
+ 1. Presentacion: "Hola, soy Alison, este es mi portafolio profesional."
+ 2. Mostrar el ENCABEZADO (header) y el menu de navegacion One-Page.
+ 3. Seccion 1 - Inicio / Quien soy: presentacion y botones.
+ 4. Seccion 2 - Sobre mi: trayectoria y estadisticas + boton de CV.
+ 5. Seccion 3 - Galeria de trabajos: proyectos individuales y grupales, mostrar filtros.
+ 6. Seccion 4 - Servicios y habilidades: tarjetas y barras de skills.
+ 7. Seccion 5 - Contacto: llenar el formulario y demostrar la validacion y el envio.
+ 8. Demostrar el SWITCH de idioma espanol-ingles.
+ 9. Demostrar el boton scrolltop y el chat de WhatsApp.
+10. Mostrar la responsividad (redimensionar la ventana o modo movil).
+11. Mostrar el PIE DE PAGINA (footer) con GitHub y LinkedIn.
+
+Recuerda: prueba el audio antes de grabar la version final.
