@@ -12,7 +12,7 @@ export default function Timeline() {
   const entries = t('timeline.items')
 
   return (
-    <section id="trayectoria" className="section bg-alt timeline-section">
+    <section id="trayectoria" className="section timeline-section">
       <div className="container">
         <div className="section-header reveal">
           <h2 className="section-title">{t('timeline.title')}</h2>

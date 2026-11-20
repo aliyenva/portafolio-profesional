@@ -17,6 +17,7 @@
   --principal-claro:   #F5F3FF;
   --principal-medio:   #DDD6FE;
   --principal-oscuro:  #C4B5FD;
+  --principal-alt:     #E2DAFD;   /* lavanda para secciones alternas */
 
   /* ── Derivados del secundario (púrpura) ── */
   --secundario-claro:  #6D28D9;
@@ -70,7 +71,7 @@ html {
 
 body {
   font-family: var(--fuente-texto);
-  background-color: var(--canvas);
+  background-color: var(--color-principal);   /* 60% lavanda */
   color: var(--texto-medio);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -102,7 +103,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   position: relative;
 }
 
-.bg-alt { background-color: var(--principal-claro); }
+.bg-alt { background-color: var(--principal-alt); }
 
 /* ── Section header ── */
 .section-header { text-align: center; margin-bottom: 3rem; }

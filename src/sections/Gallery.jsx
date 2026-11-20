@@ -28,7 +28,7 @@ export default function Gallery() {
   ]
 
   return (
-    <section id="proyectos" className="section gallery">
+    <section id="proyectos" className="section bg-alt gallery">
       <div className="container">
         <div className="section-header reveal">
           <h2 className="section-title">{t('gallery.title')}</h2>

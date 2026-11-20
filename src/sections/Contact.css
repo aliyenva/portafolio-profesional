@@ -1,4 +1,4 @@
-.contact { background: var(--principal-claro); }
+.contact { background: var(--principal-alt); }
 
 .contact__grid {
   display: grid;
