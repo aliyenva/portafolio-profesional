@@ -3,33 +3,29 @@ import Footer from './components/Footer.jsx'
 import ScrollTop from './components/ScrollTop.jsx'
 import WhatsAppChat from './components/WhatsAppChat.jsx'
 import Hero from './sections/Hero.jsx'
-import About from './sections/About.jsx'
+import Skills from './sections/Skills.jsx'
 import Gallery from './sections/Gallery.jsx'
-import Services from './sections/Services.jsx'
+import Timeline from './sections/Timeline.jsx'
 import Contact from './sections/Contact.jsx'
 import { useReveal } from './hooks/useReveal.js'
 import { useLanguage } from './context/LanguageContext.jsx'
 
 export default function App() {
   const { lang } = useLanguage()
-  // Activa animaciones de aparición al hacer scroll.
-  // Depende de lang para re-observar cuando cambia el contenido traducido.
   useReveal(lang)
 
   return (
     <>
       <Header />
       <main>
-        {/* 5 secciones semánticas (sin contar header ni footer) */}
+        {/* Exactamente 5 <section>: inicio, habilidades, proyectos, trayectoria, contacto */}
         <Hero />
-        <About />
+        <Skills />
         <Gallery />
-        <Services />
+        <Timeline />
         <Contact />
       </main>
       <Footer />
-
-      {/* Elementos flotantes */}
       <ScrollTop />
       <WhatsAppChat />
     </>

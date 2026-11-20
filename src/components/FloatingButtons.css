@@ -1,66 +1,38 @@
-/* Chat flotante de WhatsApp */
+/* WhatsApp */
 .whatsapp {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 58px;
-  height: 58px;
+  right: 22px; bottom: 22px;
+  width: 58px; height: 58px;
   border-radius: 50%;
   background: #25d366;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   z-index: 90;
-  box-shadow: var(--sombra-md);
+  box-shadow: 0 4px 16px rgba(37,211,102,0.4);
   animation: pulse 2.5s infinite;
-  transition: transform var(--trans);
+  transition: transform var(--trans-bounce);
 }
+.whatsapp:hover { transform: scale(1.12); }
 
-.whatsapp:hover {
-  transform: scale(1.1);
-}
-
-/* Botón scrolltop */
+/* ScrollTop */
 .scrolltop {
   position: fixed;
-  right: 22px;
-  bottom: 92px;
-  width: 48px;
-  height: 48px;
+  right: 22px; bottom: 92px;
+  width: 48px; height: 48px;
   border-radius: 50%;
-  background: var(--color-acento);
-  color: var(--principal-oscuro);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, var(--color-acento), var(--acento-oscuro));
+  color: var(--blanco);
+  display: flex; align-items: center; justify-content: center;
   z-index: 90;
-  box-shadow: var(--sombra-md);
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: var(--sombra-pink);
+  opacity: 0; visibility: hidden;
   transform: translateY(20px);
-  transition: opacity var(--trans), transform var(--trans), visibility var(--trans);
+  transition: opacity var(--trans), transform var(--trans-bounce), visibility var(--trans);
 }
-
-.scrolltop--visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.scrolltop:hover {
-  background: var(--acento-oscuro);
-  transform: translateY(-4px);
-}
+.scrolltop--visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.scrolltop:hover { transform: translateY(-5px) scale(1.1); animation: pinkPulse 1.5s infinite; }
 
 @media (max-width: 480px) {
-  .whatsapp {
-    width: 52px;
-    height: 52px;
-  }
-  .scrolltop {
-    bottom: 84px;
-    width: 44px;
-    height: 44px;
-  }
+  .whatsapp  { width: 52px; height: 52px; }
+  .scrolltop { bottom: 86px; width: 44px; height: 44px; }
 }

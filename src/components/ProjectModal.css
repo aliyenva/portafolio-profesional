@@ -1,0 +1,90 @@
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(76, 29, 149, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem;
+  animation: fadeUp 0.25s ease both;
+}
+
+.modal-box {
+  background: var(--canvas);
+  border: 2px solid var(--principal-medio);
+  border-radius: calc(var(--radio) * 1.5);
+  max-width: 540px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: var(--sombra-lg);
+  position: relative;
+  animation: fadeUp 0.3s var(--trans-bounce) both;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--principal-medio);
+  color: var(--texto-dark);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--trans), transform var(--trans-bounce);
+  z-index: 1;
+}
+.modal-close:hover { background: var(--color-acento); color: var(--blanco); transform: rotate(90deg) scale(1.1); }
+
+.modal-thumb {
+  position: relative;
+  height: 160px;
+  background: linear-gradient(135deg, var(--color-principal), var(--principal-medio));
+  display: flex; align-items: center; justify-content: center;
+}
+
+.modal-thumb__icon {
+  font-family: var(--fuente-titulo);
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-secundario), var(--color-acento));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-thumb__badge {
+  position: absolute; top: 12px; left: 12px;
+  font-size: 0.72rem; font-weight: 700;
+  padding: 0.25rem 0.8rem;
+  border-radius: var(--radio-pill);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.badge--group      { background: var(--color-acento);    color: var(--blanco); }
+.badge--individual { background: var(--principal-medio); color: var(--color-secundario); }
+
+.modal-body { padding: 1.8rem; }
+
+.modal-title {
+  font-size: 1.4rem;
+  color: var(--texto-dark);
+  margin-bottom: 0.8rem;
+}
+
+.modal-desc { color: var(--texto-suave); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.2rem; }
+
+.modal-tags {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 1.4rem;
+  list-style: none;
+}
+.modal-tags li {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radio-sm);
+  background: var(--principal-claro);
+  border: 1px solid var(--principal-medio);
+  color: var(--color-secundario);
+  font-weight: 600;
+}
+
+.modal-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }

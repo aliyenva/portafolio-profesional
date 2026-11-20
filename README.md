@@ -9,31 +9,31 @@ Portafolio web estilo **One-Page** con navegación por saltos entre 5 secciones,
 
 | # | Requisito (5 pts c/u) | Implementación |
 |---|------------------------|----------------|
-| 1 | Estilo ONE-PAGE, navegación por saltos a 5 secciones | `Header.jsx` (nav con anclas `#inicio`, `#sobre-mi`, `#proyectos`, `#servicios`, `#contacto`) + `scroll-behavior: smooth` |
-| 2 | Estructura semántica (`header`, `nav`, `section`, `footer`) | `Header` usa `<header><nav>`, cada sección es `<section>`, `Footer` usa `<footer>` |
-| 3 | Diseño uniforme, creativo y minimalista | Sistema de diseño en `global.css` |
-| 4 | 5 secciones de contenido (sin contar header ni footer) | Hero, About, Gallery, Services, Contact |
-| 5 | Regla 60-30-10 | Variables en `global.css`: principal `#1a2238` (60%), secundario `#394867` (30%), acento `#f9b17a` (10%). **El blanco NO entra en la regla** |
-| 6 | Efectos de transición / animación | `useReveal.js` (aparición al scroll), keyframes `fadeUp`, `floaty`, `pulse` |
+| 1 | Estilo ONE-PAGE, navegación por saltos a 5 secciones | `Header.jsx` (anclas `#inicio`, `#habilidades`, `#proyectos`, `#trayectoria`, `#contacto`) + `scroll-behavior: smooth` |
+| 2 | Estructura semántica (`header`, `nav`, `main`, `section`, `footer`) | `<header><nav>` en `Header`, 5 `<section>` dentro de `<main>`, `<footer>` en `Footer` |
+| 3 | Diseño uniforme, creativo y minimalista | Estilo kawaii-profesional: formas redondeadas, estrellas de 4 puntas, botones tipo píldora |
+| 4 | 5 secciones de contenido (sin contar header ni footer) | 1. Inicio + ¿Quién soy? · 2. Habilidades · 3. Galería de trabajos · 4. Trayectoria y formación · 5. Contacto |
+| 5 | Regla 60-30-10 | Lavanda `#EDE9FE` (60%), púrpura `#4C1D95` (30%), rosa `#F472B6` (10%). **El blanco no entra en la regla** |
+| 6 | Efectos de transición / animación | Aparición al scroll, estrellas que giran (`sparkle`), flotación, rebote en botones y pestañas |
 | 7 | Switch de idioma ES ⇄ EN | `LanguageSwitch.jsx` + `LanguageContext.jsx` + `translations.js` |
-| 8 | Elementos interactivos | Filtros de galería, barras de skills, menú responsivo, scrollspy |
+| 8 | Elementos interactivos | Pestañas de habilidades, filtros de galería, modal de detalle de proyecto, línea de tiempo, menú móvil |
 | 9 | Botón scrolltop | `ScrollTop.jsx` |
 | 10 | Chat de WhatsApp | `WhatsAppChat.jsx` |
-| 11 | Galería de trabajos (individuales y grupales) | `Gallery.jsx` con filtro y descripción de logros |
-| 12 | Formulario de contacto validado y funcional (envía a correo) | `Contact.jsx` con validación + envío vía FormSubmit |
+| 11 | Galería de trabajos (individuales y grupales) | `Gallery.jsx` + `ProjectModal.jsx`, con descripción del logro de cada proyecto |
+| 12 | Formulario de contacto validado y funcional | `Contact.jsx`, validación + envío con EmailJS |
 
-Todo el sitio es **responsivo** (móvil, tablet, escritorio).
+Todo el sitio es **responsivo** (móvil 375px, tablet 768px, escritorio 1440px).
 
 ---
 
 ## Regla 60-30-10 (paleta)
 
-- **60% Principal:** `#1a2238` (azul marino profundo)
-- **30% Secundario:** `#394867` (azul acero)
-- **10% Acento:** `#f9b17a` (dorado ámbar)
-- El **blanco** (`#ffffff`) se usa solo como color de limpieza (texto/espacios), **no** dentro de la regla.
+- **60% Principal:** `#EDE9FE` (lavanda pastel): fondos de sección, superficies, tarjetas y miniaturas.
+- **30% Secundario:** `#4C1D95` (púrpura real): títulos, footer, pestañas activas y contraste.
+- **10% Acento:** `#F472B6` (rosa pastel): botones de acción, hover, estrellas, insignias e indicadores.
+- El **blanco** (`#FAFAFC`) se usa solo como color de limpieza (fondo neutro), **no** dentro de la regla.
 
-El logotipo personal (`src/components/Logo.jsx` y `public/logo.svg`) define esta identidad visual.
+El logotipo personal (`src/components/Logo.jsx` y `public/logo.svg`) es una estrella de 4 puntas rosa sobre un círculo púrpura con la inicial "A", y de ahí salen los tres colores de la paleta.
 
 ---
 

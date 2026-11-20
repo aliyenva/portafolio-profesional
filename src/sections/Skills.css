@@ -1,0 +1,92 @@
+.skills-section { background: var(--canvas); }
+
+/* Tabs */
+.skills-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.skills-tab {
+  padding: 0.5rem 1.3rem;
+  border-radius: var(--radio-pill);
+  background: var(--principal-claro);
+  border: 1.5px solid var(--principal-medio);
+  color: var(--texto-suave);
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all var(--trans-bounce);
+}
+.skills-tab:hover { border-color: var(--color-acento); color: var(--color-acento); }
+.skills-tab.is-active {
+  background: linear-gradient(135deg, var(--color-secundario), var(--secundario-claro));
+  border-color: transparent;
+  color: var(--blanco);
+  box-shadow: var(--sombra-md);
+  animation: microBounce 0.4s ease;
+}
+
+/* Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* Pill card */
+.skill-pill {
+  background: var(--canvas);
+  border: 1.5px solid var(--principal-medio);
+  border-radius: var(--radio);
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: transform var(--trans-bounce), border-color var(--trans),
+              box-shadow var(--trans), opacity 0.5s ease;
+}
+.skill-pill:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--color-acento);
+  box-shadow: var(--sombra-pink);
+}
+
+.skill-pill__icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.skill-pill__name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--texto-dark);
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-pill__bar {
+  width: 60px;
+  height: 6px;
+  border-radius: 6px;
+  background: var(--principal-medio);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.skill-pill__fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--color-acento), var(--acento-oscuro));
+  transition: width 1s ease;
+}
+
+.skill-pill__pct {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}

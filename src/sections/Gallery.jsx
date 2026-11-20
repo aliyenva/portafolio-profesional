@@ -1,27 +1,23 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext.jsx'
+import ProjectModal from '../components/ProjectModal.jsx'
 import './Gallery.css'
 
-// SECCIÓN 3: Galería de trabajos (proyectos individuales y grupales)
+// SECCIÓN 3: Galería de trabajos
 export default function Gallery() {
   const { t } = useLanguage()
   const [filter, setFilter] = useState('all')
+  const [selected, setSelected] = useState(null)
   const gridRef = useRef(null)
 
-  const items = t('gallery.items') // array traducido
-  const filtered =
-    filter === 'all' ? items : items.filter((i) => i.type === filter)
+  const items = t('gallery.items')
+  const filtered = filter === 'all' ? items : items.filter((i) => i.type === filter)
 
-  // Cada vez que cambia el filtro (o el idioma) las tarjetas se vuelven a
-  // montar. Aquí forzamos su aparición para que el reveal global no las deje
-  // ocultas. Un frame después añadimos .visible a las tarjetas visibles.
   useEffect(() => {
     const grid = gridRef.current
     if (!grid) return
     const cards = grid.querySelectorAll('.project-card')
-    const id = requestAnimationFrame(() => {
-      cards.forEach((card) => card.classList.add('visible'))
-    })
+    const id = requestAnimationFrame(() => cards.forEach((c) => c.classList.add('visible')))
     return () => cancelAnimationFrame(id)
   }, [filter, items])
 
@@ -39,7 +35,6 @@ export default function Gallery() {
           <p className="section-subtitle">{t('gallery.subtitle')}</p>
         </div>
 
-        {/* Elemento interactivo: filtros */}
         <div className="gallery__filters reveal" role="tablist">
           {filters.map((f) => (
             <button
@@ -60,46 +55,30 @@ export default function Gallery() {
               className="project-card reveal"
               key={`${filter}-${item.title}`}
               style={{ transitionDelay: `${idx * 0.06}s` }}
+              tabIndex={0}
+              onClick={() => setSelected(item)}
+              onKeyDown={(e) => { if (e.key === 'Enter') setSelected(item) }}
             >
               <div className="project-card__thumb">
                 <span className={`project-card__badge project-card__badge--${item.type}`}>
-                  {item.type === 'group'
-                    ? t('gallery.filters.group')
-                    : t('gallery.filters.individual')}
+                  {item.type === 'group' ? t('gallery.filters.group') : t('gallery.filters.individual')}
                 </span>
-                <span className="project-card__icon" aria-hidden="true">
-                  {'</>'}
-                </span>
+                <span className="project-card__icon" aria-hidden="true">{'</>'}</span>
               </div>
               <div className="project-card__body">
                 <h3 className="project-card__title">{item.title}</h3>
                 <p className="project-card__desc">{item.desc}</p>
                 <ul className="project-card__tags">
-                  {item.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
+                  {item.tags.map((tag) => <li key={tag}>{tag}</li>)}
                 </ul>
-                {item.links && item.links.length > 0 && (
-                  <div className="project-card__links">
-                    {item.links.map((link) => (
-                      <a
-                        key={link.url}
-                        href={link.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="project-card__link"
-                      >
-                        {link.label}
-                        <span aria-hidden="true"> ↗</span>
-                      </a>
-                    ))}
-                  </div>
-                )}
+                <span className="project-card__more">{t('gallery.viewProject')} ✦</span>
               </div>
             </article>
           ))}
         </div>
       </div>
+
+      {selected && <ProjectModal item={selected} onClose={() => setSelected(null)} />}
     </section>
   )
 }
