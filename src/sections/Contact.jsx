@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import { useLanguage } from '../context/LanguageContext.jsx'
 import { config } from '../data/config.js'
 import './Contact.css'
 
 // SECCIÓN 5: Contacto - formulario validado 100% funcional
-// El envío se hace vía FormSubmit (https://formsubmit.co) para que los
-// mensajes lleguen al correo definido en config.email SIN necesidad de backend.
+// Envío via EmailJS (https://emailjs.com) — no requiere backend.
+// Configura las variables VITE_EMAILJS_* en el archivo .env del proyecto.
 export default function Contact() {
   const { t } = useLanguage()
+  const formRef = useRef(null)
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | success | error
@@ -34,20 +36,22 @@ export default function Contact() {
 
     setStatus('sending')
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${config.email}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          _subject: form.subject,
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
           message: form.message,
-        }),
-      })
-      if (!res.ok) throw new Error('Error de envío')
+          to_email: config.email,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
       setStatus('success')
       setForm({ name: '', email: '', subject: '', message: '' })
-    } catch {
+    } catch (err) {
+      console.error('EmailJS error:', err)
       setStatus('error')
     }
   }
