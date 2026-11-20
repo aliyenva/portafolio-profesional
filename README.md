@@ -1,4 +1,4 @@
-# Portafolio Profesional — One-Page (React)
+﻿# Portafolio Profesional — One-Page (React)
 
 Prueba de suficiencia **BISOFT-23 Portafolio Profesional** · Universidad CENFOTEC · Período C3-2026.
 Portafolio web estilo **One-Page** con navegación por saltos entre 5 secciones, construido con **React + Vite**.
@@ -13,7 +13,7 @@ Portafolio web estilo **One-Page** con navegación por saltos entre 5 secciones,
 | 2 | Estructura semántica (`header`, `nav`, `main`, `section`, `footer`) | `<header><nav>` en `Header`, 5 `<section>` dentro de `<main>`, `<footer>` en `Footer` |
 | 3 | Diseño uniforme, creativo y minimalista | Estilo kawaii-profesional: formas redondeadas, estrellas de 4 puntas, botones tipo píldora |
 | 4 | 5 secciones de contenido (sin contar header ni footer) | 1. Inicio + ¿Quién soy? · 2. Habilidades · 3. Galería de trabajos · 4. Trayectoria y formación · 5. Contacto |
-| 5 | Regla 60-30-10 | Lavanda `#EDE9FE` (60%), púrpura `#4C1D95` (30%), rosa `#F472B6` (10%). **El blanco no entra en la regla** |
+| 5 | Regla 60-30-10 | Lavanda `#D9CCFA` (60%), púrpura `#4C1D95` (30%), rosa `#F472B6` (10%). **El blanco no entra en la regla** |
 | 6 | Efectos de transición / animación | Aparición al scroll, estrellas que giran (`sparkle`), flotación, rebote en botones y pestañas |
 | 7 | Switch de idioma ES ⇄ EN | `LanguageSwitch.jsx` + `LanguageContext.jsx` + `translations.js` |
 | 8 | Elementos interactivos | Pestañas de habilidades, filtros de galería, modal de detalle de proyecto, línea de tiempo, menú móvil |
@@ -28,7 +28,7 @@ Todo el sitio es **responsivo** (móvil 375px, tablet 768px, escritorio 1440px).
 
 ## Regla 60-30-10 (paleta)
 
-- **60% Principal:** `#EDE9FE` (lavanda pastel): fondos de sección, superficies, tarjetas y miniaturas.
+- **60% Principal:** `#D9CCFA` (lavanda pastel): fondos de sección, superficies, tarjetas y miniaturas.
 - **30% Secundario:** `#4C1D95` (púrpura real): títulos, footer, pestañas activas y contraste.
 - **10% Acento:** `#F472B6` (rosa pastel): botones de acción, hover, estrellas, insignias e indicadores.
 - El **blanco** (`#FAFAFC`) se usa solo como color de limpieza (fondo neutro), **no** dentro de la regla.

@@ -1,7 +1,7 @@
 /* ============================================================
    SISTEMA DE DISEÑO - REGLA 60-30-10
    ------------------------------------------------------------
-   60% -> PRINCIPAL  : Lavanda pastel suave   #EDE9FE
+   60% -> PRINCIPAL  : Lavanda pastel         #D9CCFA
    30% -> SECUNDARIO : Púrpura real profundo  #4C1D95
    10% -> ACENTO     : Rosa pastel kawaii     #F472B6
    BLANCO (#FAFAFC): color de LIMPIEZA únicamente — NO cuenta en la regla.
@@ -9,7 +9,7 @@
 
 :root {
   /* ── Regla 60-30-10 ── */
-  --color-principal:   #EDE9FE;   /* 60% lavanda */
+  --color-principal:   #D9CCFA;   /* 60% lavanda */
   --color-secundario:  #4C1D95;   /* 30% púrpura */
   --color-acento:      #F472B6;   /* 10% rosa */
 
@@ -17,7 +17,7 @@
   --principal-claro:   #F5F3FF;
   --principal-medio:   #DDD6FE;
   --principal-oscuro:  #C4B5FD;
-  --principal-alt:     #E2DAFD;   /* lavanda para secciones alternas */
+  --principal-alt:     #CBB9F6;   /* lavanda para secciones alternas */
 
   /* ── Derivados del secundario (púrpura) ── */
   --secundario-claro:  #6D28D9;
