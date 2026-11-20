@@ -5,7 +5,7 @@ export const config = {
   nombre: 'Alison',
   apellido: '',
   // Correo donde llegarán los mensajes del formulario de contacto
-  email: 'aliyenva@gmail.com',
+  email: 'ayeungv@ucenfotec.ac.cr',
   // Número de WhatsApp en formato internacional SIN + ni espacios (ej: 50688887777)
   whatsapp: '50686644448',
   // Redes / espacios digitales

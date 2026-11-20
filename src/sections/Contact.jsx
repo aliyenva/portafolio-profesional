@@ -40,11 +40,10 @@ export default function Contact() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          from_email: form.email,
-          subject: form.subject,
+          name: form.name,
+          email: form.email,
+          title: form.subject,
           message: form.message,
-          to_email: config.email,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
