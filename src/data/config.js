@@ -11,19 +11,21 @@ export const config = {
   // Redes / espacios digitales
   github: 'https://github.com/aliyenva',
   linkedin: 'https://www.linkedin.com/in/aliyenva/',
-  // Habilidades técnicas (nivel 0-100)
+  // Habilidades técnicas (nivel 0-100) — basadas en el CV
   skills: [
-    { name: 'React', level: 85 },
-    { name: 'JavaScript', level: 88 },
-    { name: 'HTML & CSS', level: 92 },
-    { name: 'Node.js', level: 78 },
-    { name: 'Java', level: 75 },
-    { name: 'SQL', level: 80 },
+    { name: 'Java / Spring Boot', level: 85 },
+    { name: 'JavaScript / TypeScript', level: 88 },
+    { name: 'HTML & CSS / Bootstrap', level: 92 },
+    { name: 'Angular / React', level: 82 },
+    { name: 'SQL (MySQL / PostgreSQL / SQLite)', level: 85 },
+    { name: 'Git / Azure DevOps / Jira', level: 90 },
+    { name: 'Splunk / GCP / Docker', level: 78 },
+    { name: 'ServiceNow / Postman / Bruno', level: 88 },
   ],
   stats: {
-    projects: 12,
-    tech: 8,
-    years: 3,
+    projects: 6,
+    tech: 25,
+    years: 4,
   },
   // Ruta del currículum dentro de /public
   cvFile: './cv-alison.pdf',
