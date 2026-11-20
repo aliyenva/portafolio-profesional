@@ -33,5 +33,5 @@ export const config = {
     years: 4,
   },
   // Ruta del currículum dentro de /public
-  cvFile: './cv-alison.pdf',
+  cvFile: './Alison_Yeung_2026_updated.pdf',
 }

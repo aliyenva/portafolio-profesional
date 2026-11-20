@@ -37,4 +37,4 @@ ANTES DE ENTREGAR, EDITA src/data/config.js con:
   - tu correo real (formulario)
   - tu numero de WhatsApp
   - tus URLs de GitHub y LinkedIn
-Y coloca tu CV en public/cv-alison.pdf
+CV real ya incluido en public/Alison_Yeung_2026_updated.pdf

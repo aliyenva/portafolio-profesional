@@ -57,7 +57,7 @@ PortafolioProfesionalAlison/
 ├─ vite.config.js
 ├─ public/
 │  ├─ logo.svg
-│  └─ cv-alison.pdf        (agrega tu CV aquí)
+│  └─ Alison_Yeung_2026_updated.pdf   (currículum descargable)
 └─ src/
    ├─ main.jsx
    ├─ App.jsx
