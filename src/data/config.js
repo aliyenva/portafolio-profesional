@@ -28,7 +28,7 @@ export const config = {
     { name: 'Postman / Bruno', level: 88, category: 'support', icon: '📮' },
   ],
   stats: {
-    projects: 6,
+    projects: 3,
     tech: 25,
     years: 4,
   },

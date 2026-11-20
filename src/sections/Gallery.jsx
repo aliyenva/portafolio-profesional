@@ -1,34 +1,38 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext.jsx'
+import { projects } from '../data/projects.js'
+import ImageCarousel from '../components/ImageCarousel.jsx'
 import ProjectModal from '../components/ProjectModal.jsx'
 import './Gallery.css'
 
-// SECCIÓN 3: Galería de trabajos
+// SECCIÓN 3: Galería de trabajos (una de las 5 <section> de <main>)
 export default function Gallery() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const [filter, setFilter] = useState('all')
   const [selected, setSelected] = useState(null)
   const gridRef = useRef(null)
 
-  const items = t('gallery.items')
-  const filtered = filter === 'all' ? items : items.filter((i) => i.type === filter)
+  const filtered = filter === 'all' ? projects : projects.filter((p) => p.type === filter)
 
+  // Las tarjetas se vuelven a montar al filtrar: forzamos su aparición
   useEffect(() => {
     const grid = gridRef.current
     if (!grid) return
     const cards = grid.querySelectorAll('.project-card')
     const id = requestAnimationFrame(() => cards.forEach((c) => c.classList.add('visible')))
     return () => cancelAnimationFrame(id)
-  }, [filter, items])
+  }, [filter, lang])
 
   const filters = [
     { id: 'all', label: t('gallery.filters.all') },
-    { id: 'individual', label: t('gallery.filters.individual') },
     { id: 'group', label: t('gallery.filters.group') },
+    { id: 'individual', label: t('gallery.filters.individual') },
   ]
 
+  const open = (p) => setSelected(p)
+
   return (
-    <section id="proyectos" className="section bg-alt gallery">
+    <section id="projects" className="section bg-alt gallery">
       <div className="container">
         <div className="section-header reveal">
           <h2 className="section-title">{t('gallery.title')}</h2>
@@ -50,35 +54,43 @@ export default function Gallery() {
         </div>
 
         <div className="gallery__grid" ref={gridRef}>
-          {filtered.map((item, idx) => (
-            <article
-              className="project-card reveal"
-              key={`${filter}-${item.title}`}
-              style={{ transitionDelay: `${idx * 0.06}s` }}
-              tabIndex={0}
-              onClick={() => setSelected(item)}
-              onKeyDown={(e) => { if (e.key === 'Enter') setSelected(item) }}
-            >
-              <div className="project-card__thumb">
-                <span className={`project-card__badge project-card__badge--${item.type}`}>
-                  {item.type === 'group' ? t('gallery.filters.group') : t('gallery.filters.individual')}
-                </span>
-                <span className="project-card__icon" aria-hidden="true">{'</>'}</span>
-              </div>
-              <div className="project-card__body">
-                <h3 className="project-card__title">{item.title}</h3>
-                <p className="project-card__desc">{item.desc}</p>
-                <ul className="project-card__tags">
-                  {item.tags.map((tag) => <li key={tag}>{tag}</li>)}
-                </ul>
-                <span className="project-card__more">{t('gallery.viewProject')} ✦</span>
-              </div>
-            </article>
-          ))}
+          {filtered.map((p, idx) => {
+            const text = p[lang]
+            return (
+              <article
+                className="project-card reveal"
+                key={`${filter}-${p.id}`}
+                style={{ transitionDelay: `${idx * 0.06}s` }}
+                tabIndex={0}
+                aria-label={text.title}
+                onClick={() => open(p)}
+                onKeyDown={(e) => {
+                  if (e.target === e.currentTarget && e.key === 'Enter') open(p)
+                }}
+              >
+                <div className="project-card__media">
+                  <span className={`project-card__badge project-card__badge--${p.type}`}>
+                    {t(`gallery.badge.${p.type}`)}
+                  </span>
+                  <ImageCarousel images={p.images} captions={text.captions} title={text.title} />
+                </div>
+
+                <div className="project-card__body">
+                  <h3 className="project-card__title">{text.title}</h3>
+                  <p className="project-card__desc">{text.desc}</p>
+                  <p className="project-card__achievement">{text.achievement}</p>
+                  <ul className="project-card__tags">
+                    {p.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                  </ul>
+                  <span className="project-card__more">{t('gallery.viewProject')} ✦</span>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
 
-      {selected && <ProjectModal item={selected} onClose={() => setSelected(null)} />}
+      {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}
     </section>
   )
 }

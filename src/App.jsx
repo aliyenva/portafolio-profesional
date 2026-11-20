@@ -18,7 +18,7 @@ export default function App() {
     <>
       <Header />
       <main>
-        {/* Exactamente 5 <section>: inicio, habilidades, proyectos, trayectoria, contacto */}
+        {/* Exactamente 5 <section>: inicio, habilidades, projects, trayectoria, contacto */}
         <Hero />
         <Skills />
         <Gallery />

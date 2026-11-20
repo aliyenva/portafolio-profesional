@@ -7,7 +7,7 @@ import './Header.css'
 const links = [
   { id: 'inicio', key: 'nav.home' },
   { id: 'habilidades', key: 'nav.skills' },
-  { id: 'proyectos', key: 'nav.gallery' },
+  { id: 'projects', key: 'nav.gallery' },
   { id: 'trayectoria', key: 'nav.timeline' },
   { id: 'contacto', key: 'nav.contact' },
 ]

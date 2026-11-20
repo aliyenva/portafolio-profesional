@@ -26,7 +26,7 @@ export default function Hero() {
           <h2 className="hero__role">{t('hero.role')}</h2>
           <p className="hero__tagline">{t('hero.tagline')}</p>
           <div className="hero__cta">
-            <a href="#proyectos" className="btn btn-primary">{t('hero.ctaProjects')}</a>
+            <a href="#projects" className="btn btn-primary">{t('hero.ctaProjects')}</a>
             <a href={config.cvFile} download className="btn btn-outline">{t('hero.ctaCv')}</a>
           </div>
         </div>

@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext.jsx'
+import ImageCarousel from './ImageCarousel.jsx'
 import './ProjectModal.css'
 
-export default function ProjectModal({ item, onClose }) {
-  const { t } = useLanguage()
+export default function ProjectModal({ project, onClose }) {
+  const { t, lang } = useLanguage()
 
-  // Close on Escape key
+  // Escape cierra el modal; se bloquea el scroll del fondo
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose() }
     document.addEventListener('keydown', onKey)
@@ -16,38 +17,42 @@ export default function ProjectModal({ item, onClose }) {
     }
   }, [onClose])
 
-  if (!item) return null
+  if (!project) return null
+  const text = project[lang]
 
   return (
-    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true">
-      <div className="modal-box" onClick={e => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose} aria-label="Cerrar">✕</button>
+    <div className="modal-backdrop" onClick={onClose}>
+      <div
+        className="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button className="modal-close" onClick={onClose} aria-label={t('gallery.close')}>✕</button>
 
-        <div className="modal-thumb" aria-hidden="true">
-          <span className="modal-thumb__icon">{'</>'}</span>
-          <span className={`modal-thumb__badge badge--${item.type}`}>
-            {item.type === 'group' ? t('gallery.filters.group') : t('gallery.filters.individual')}
+        <div className="modal-media">
+          <span className={`modal-badge badge--${project.type}`}>
+            {t(`gallery.badge.${project.type}`)}
           </span>
+          {/* keyboard: ArrowLeft / ArrowRight navegan el carrusel dentro del modal */}
+          <ImageCarousel images={project.images} captions={text.captions} title={text.title} keyboard />
         </div>
 
         <div className="modal-body">
-          <h2 className="modal-title">{item.title}</h2>
-          <p className="modal-desc">{item.desc}</p>
+          <h2 className="modal-title" id="modal-title">{text.title}</h2>
+          <p className="modal-desc">{text.desc}</p>
+          <p className="modal-achievement">{text.achievement}</p>
 
+          <h3 className="modal-subtitle">{t('gallery.technologies')}</h3>
           <ul className="modal-tags">
-            {item.tags.map(tag => <li key={tag}>{tag}</li>)}
+            {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
           </ul>
 
-          {item.links?.length > 0 && (
+          {project.links.length > 0 && (
             <div className="modal-links">
-              {item.links.map(link => (
-                <a
-                  key={link.url}
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary"
-                >
+              {project.links.map((link) => (
+                <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="btn btn-primary">
                   {link.label} ↗
                 </a>
               ))}
