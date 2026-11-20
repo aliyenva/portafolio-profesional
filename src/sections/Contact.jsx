@@ -1,18 +1,19 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { useLanguage } from '../context/LanguageContext.jsx'
 import { config } from '../data/config.js'
 import './Contact.css'
 
-// SECCIÓN 5: Contacto - formulario validado 100% funcional
-// Envío via EmailJS (https://emailjs.com) — no requiere backend.
-// Configura las variables VITE_EMAILJS_* en el archivo .env del proyecto.
+const SID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
 export default function Contact() {
   const { t } = useLanguage()
-  const formRef = useRef(null)
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [errMsg, setErrMsg] = useState('')
 
   const validate = () => {
     const e = {}
@@ -33,24 +34,27 @@ export default function Contact() {
   const handleSubmit = async (ev) => {
     ev.preventDefault()
     if (!validate()) return
-
     setStatus('sending')
+    setErrMsg('')
+
+    // Template variables — must match EXACTLY what your EmailJS template uses:
+    // {{name}}, {{email}}, {{title}}, {{message}}
+    const templateParams = {
+      name:    form.name,
+      email:   form.email,
+      title:   form.subject,
+      message: form.message,
+    }
+
     try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          name: form.name,
-          email: form.email,
-          title: form.subject,
-          message: form.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
+      const result = await emailjs.send(SID, TID, templateParams, { publicKey: KEY })
+      console.log('EmailJS OK:', result.status, result.text)
       setStatus('success')
       setForm({ name: '', email: '', subject: '', message: '' })
     } catch (err) {
-      console.error('EmailJS error details:', JSON.stringify(err))
+      const msg = err?.text || err?.message || JSON.stringify(err)
+      console.error('EmailJS ERROR:', msg)
+      setErrMsg(msg)
       setStatus('error')
     }
   }
@@ -64,7 +68,6 @@ export default function Contact() {
         </div>
 
         <div className="contact__grid">
-          {/* Información de contacto */}
           <aside className="contact__info reveal">
             <h3>{t('contact.infoTitle')}</h3>
             <ul>
@@ -74,102 +77,50 @@ export default function Contact() {
               </li>
               <li>
                 <span className="contact__info-icon" aria-hidden="true">💼</span>
-                <a href={config.linkedin} target="_blank" rel="noreferrer">
-                  LinkedIn
-                </a>
+                <a href={config.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
               </li>
               <li>
                 <span className="contact__info-icon" aria-hidden="true">🐙</span>
-                <a href={config.github} target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
+                <a href={config.github} target="_blank" rel="noreferrer">GitHub</a>
               </li>
             </ul>
           </aside>
 
-          {/* Formulario validado */}
           <form className="contact__form reveal" onSubmit={handleSubmit} noValidate>
             <div className="field">
               <label htmlFor="name">{t('contact.name')}</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={form.name}
-                onChange={handleChange}
-                placeholder={t('contact.placeholderName')}
-                aria-invalid={!!errors.name}
-                aria-describedby={errors.name ? 'err-name' : undefined}
-              />
-              {errors.name && (
-                <span className="field__error" id="err-name" role="alert">
-                  {errors.name}
-                </span>
-              )}
+              <input id="name" name="name" type="text" value={form.name}
+                onChange={handleChange} placeholder={t('contact.placeholderName')}
+                aria-invalid={!!errors.name} />
+              {errors.name && <span className="field__error" role="alert">{errors.name}</span>}
             </div>
 
             <div className="field">
               <label htmlFor="email">{t('contact.email')}</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder={t('contact.placeholderEmail')}
-                aria-invalid={!!errors.email}
-                aria-describedby={errors.email ? 'err-email' : undefined}
-              />
-              {errors.email && (
-                <span className="field__error" id="err-email" role="alert">
-                  {errors.email}
-                </span>
-              )}
+              <input id="email" name="email" type="email" value={form.email}
+                onChange={handleChange} placeholder={t('contact.placeholderEmail')}
+                aria-invalid={!!errors.email} />
+              {errors.email && <span className="field__error" role="alert">{errors.email}</span>}
             </div>
 
             <div className="field">
               <label htmlFor="subject">{t('contact.subject')}</label>
-              <input
-                id="subject"
-                name="subject"
-                type="text"
-                value={form.subject}
-                onChange={handleChange}
-                placeholder={t('contact.placeholderSubject')}
-                aria-invalid={!!errors.subject}
-                aria-describedby={errors.subject ? 'err-subject' : undefined}
-              />
-              {errors.subject && (
-                <span className="field__error" id="err-subject" role="alert">
-                  {errors.subject}
-                </span>
-              )}
+              <input id="subject" name="subject" type="text" value={form.subject}
+                onChange={handleChange} placeholder={t('contact.placeholderSubject')}
+                aria-invalid={!!errors.subject} />
+              {errors.subject && <span className="field__error" role="alert">{errors.subject}</span>}
             </div>
 
             <div className="field">
               <label htmlFor="message">{t('contact.message')}</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                value={form.message}
-                onChange={handleChange}
-                placeholder={t('contact.placeholderMessage')}
-                aria-invalid={!!errors.message}
-                aria-describedby={errors.message ? 'err-message' : undefined}
-              ></textarea>
-              {errors.message && (
-                <span className="field__error" id="err-message" role="alert">
-                  {errors.message}
-                </span>
-              )}
+              <textarea id="message" name="message" rows="5" value={form.message}
+                onChange={handleChange} placeholder={t('contact.placeholderMessage')}
+                aria-invalid={!!errors.message} />
+              {errors.message && <span className="field__error" role="alert">{errors.message}</span>}
             </div>
 
-            <button
-              type="submit"
-              className="btn btn-primary contact__submit"
-              disabled={status === 'sending'}
-            >
+            <button type="submit" className="btn btn-primary contact__submit"
+              disabled={status === 'sending'}>
               {status === 'sending' ? t('contact.sending') : t('contact.send')}
             </button>
 
@@ -180,9 +131,7 @@ export default function Contact() {
             )}
             {status === 'error' && (
               <p className="contact__feedback contact__feedback--err" role="alert">
-                {t('lang') === 'en'
-                  ? 'Something went wrong. Please email directly: '
-                  : 'Algo salió mal. Escríbeme directamente a: '}
+                Error: {errMsg || 'Unknown error'} — {t('contact.errorFallback')}{' '}
                 <a href={`mailto:${config.email}`}>{config.email}</a>
               </p>
             )}
