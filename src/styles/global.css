@@ -2,7 +2,7 @@
    SISTEMA DE DISEÑO - REGLA 60-30-10
    ------------------------------------------------------------
    60% -> PRINCIPAL  : Lavanda pastel         #D9CCFA
-   30% -> SECUNDARIO : Púrpura real profundo  #4C1D95
+   30% -> SECUNDARIO : Azul marino profundo   #1E3A5F
    10% -> ACENTO     : Rosa pastel kawaii     #F472B6
    BLANCO (#FAFAFC): color de LIMPIEZA únicamente — NO cuenta en la regla.
    ============================================================ */
@@ -10,7 +10,7 @@
 :root {
   /* ── Regla 60-30-10 ── */
   --color-principal:   #D9CCFA;   /* 60% lavanda */
-  --color-secundario:  #4C1D95;   /* 30% púrpura */
+  --color-secundario:  #1E3A5F;   /* 30% azul marino */
   --color-acento:      #F472B6;   /* 10% rosa */
 
   /* ── Derivados del principal (lavanda) ── */
@@ -19,10 +19,10 @@
   --principal-oscuro:  #C4B5FD;
   --principal-alt:     #CBB9F6;   /* lavanda para secciones alternas */
 
-  /* ── Derivados del secundario (púrpura) ── */
-  --secundario-claro:  #6D28D9;
-  --secundario-suave:  #7C3AED;
-  --secundario-dark:   #3B0764;
+  /* ── Derivados del secundario (azul marino) ── */
+  --secundario-claro:  #2C5282;
+  --secundario-suave:  #3B6A9E;
+  --secundario-dark:   #12263F;
 
   /* ── Derivados del acento (rosa) ── */
   --acento-claro:      #FBCFE8;
@@ -33,19 +33,19 @@
   --blanco:            #FFFFFF;
 
   /* ── Texto ── */
-  --texto-dark:        #1E1B4B;   /* títulos */
-  --texto-medio:       #4B4580;   /* cuerpo */
-  --texto-suave:       #7C6FAE;   /* secundario */
-  --texto-muted:       #A99DCF;   /* placeholder */
+  --texto-dark:        #172A45;   /* títulos */
+  --texto-medio:       #3E5170;   /* cuerpo */
+  --texto-suave:       #5E7290;   /* secundario */
+  --texto-muted:       #8FA0B8;   /* placeholder */
 
   /* ── Tipografía ── */
   --fuente-titulo: 'Poppins', 'Segoe UI', system-ui, sans-serif;
   --fuente-texto:  'Inter',   'Segoe UI', system-ui, sans-serif;
 
   /* ── Sombras ── */
-  --sombra-sm:  0 2px 12px rgba(76, 29, 149, 0.10);
-  --sombra-md:  0 8px 32px  rgba(76, 29, 149, 0.15);
-  --sombra-lg:  0 16px 48px rgba(76, 29, 149, 0.20);
+  --sombra-sm:  0 2px 12px rgba(30, 58, 95, 0.10);
+  --sombra-md:  0 8px 32px  rgba(30, 58, 95, 0.15);
+  --sombra-lg:  0 16px 48px rgba(30, 58, 95, 0.20);
   --sombra-pink:0 8px 24px  rgba(244, 114, 182, 0.30);
 
   /* ── Radios ── */

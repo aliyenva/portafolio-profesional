@@ -1,6 +1,6 @@
 // Logo personal: monograma "AY" con estrella de 4 puntas (kawaii + profesional)
 // Colores derivados de la paleta 60-30-10:
-//   fondo: #4C1D95 (secundario/púrpura)
+//   fondo: #1E3A5F (secundario/azul marino)
 //   estrella + detalles: #F472B6 (acento/rosa)
 //   letras: #FAFAFC (canvas/blanco limpieza)
 export default function Logo({ size = 40 }) {
@@ -18,14 +18,14 @@ export default function Logo({ size = 40 }) {
           <stop offset="0%" stopColor="#F472B6" />
           <stop offset="100%" stopColor="#DB2777" />
         </linearGradient>
-        <linearGradient id="lgPurple" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#6D28D9" />
-          <stop offset="100%" stopColor="#4C1D95" />
+        <linearGradient id="lgNavy" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#2C5282" />
+          <stop offset="100%" stopColor="#1E3A5F" />
         </linearGradient>
       </defs>
 
-      {/* Fondo circular púrpura (secundario 30%) */}
-      <circle cx="32" cy="32" r="30" fill="url(#lgPurple)" />
+      {/* Fondo circular azul marino (secundario 30%) */}
+      <circle cx="32" cy="32" r="30" fill="url(#lgNavy)" />
 
       {/* Estrella de 4 puntas kawaii (acento 10%) */}
       <path
