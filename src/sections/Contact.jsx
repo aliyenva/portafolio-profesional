@@ -50,7 +50,7 @@ export default function Contact() {
       setStatus('success')
       setForm({ name: '', email: '', subject: '', message: '' })
     } catch (err) {
-      console.error('EmailJS error:', err)
+      console.error('EmailJS error details:', JSON.stringify(err))
       setStatus('error')
     }
   }
@@ -180,7 +180,10 @@ export default function Contact() {
             )}
             {status === 'error' && (
               <p className="contact__feedback contact__feedback--err" role="alert">
-                {config.email}
+                {t('lang') === 'en'
+                  ? 'Something went wrong. Please email directly: '
+                  : 'Algo salió mal. Escríbeme directamente a: '}
+                <a href={`mailto:${config.email}`}>{config.email}</a>
               </p>
             )}
           </form>
