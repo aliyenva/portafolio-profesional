@@ -60,23 +60,23 @@ export const projects = [
     },
   },
   {
-    id: 'portfolio',
+    id: 'coscraft-planner',
     type: 'individual',
-    images: ['/images/projects/portfolio-1.png', '/images/projects/portfolio-2.png'],
-    links: [{ label: 'GitHub Repo', url: 'https://github.com/aliyenva/portafolio-profesional' }],
-    tags: ['React', 'HTML5 Semántico', 'CSS3 (60-30-10)', 'EmailJS / Web3Forms'],
+    images: ['/images/projects/CrossCraft-1.png', '/images/projects/CrossCraft-2.png'],
+    links: [{ label: 'GitHub Repo', url: 'https://github.com/aliyenva/coscraft-planner' }],
+    tags: ['Angular / React', 'TypeScript', 'Node.js', 'SQLite'],
     es: {
-      title: 'Portafolio Profesional Interactivo < AYV >',
-      desc: 'Aplicación web One-Page bilingüe (ES/EN) con identidad visual kawaii-profesional, estructura HTML5 semántica, regla de color 60-30-10 y formulario de contacto conectado a buzón electrónico.',
+      title: 'CosCraft Planner — Organizador de Proyectos de Cosplay y Presupuestos',
+      desc: 'Aplicación web interactiva diseñada para planificar proyectos de cosplay y diseño de vestuario por evento o convención. Permite desglosar piezas del traje, gestionar listas de materiales y telas, monitorear el progreso porcentual por prop o prenda, registrar tiempo invertido y controlar el presupuesto en tiempo real.',
       achievement:
-        'Logro: Integración equilibrada entre accesibilidad semántica, diseño responsivo multi-dispositivo y micro-interacciones dinámicas en React.',
+        'Logro: Desarrollo de una aplicación web full-stack con seguimiento granular de avance y cálculo dinámico de costos para producción de vestuario y utilería.',
       captions: [],
     },
     en: {
-      title: '< AYV > Interactive Professional Portfolio',
-      desc: 'Bilingual (ES/EN) One-Page web application featuring a kawaii-professional brand identity, semantic HTML5 structure, strict 60-30-10 color theory, and a validated contact form wired to email.',
+      title: 'CosCraft Planner — Cosplay & Costume Budget Organizer',
+      desc: 'Interactive web application designed to plan cosplay and costume design projects by event or convention. Breaks down outfit components, manages fabric and material checklists, tracks percentage progress per prop or garment, logs crafting hours, and calculates budgets in real time.',
       achievement:
-        'Achievement: Balanced strict semantic accessibility, responsive multi-device layout, and dynamic React micro-interactions.',
+        'Achievement: Developed a full-stack web application featuring granular progress tracking and dynamic cost calculation for costume and prop production.',
       captions: [],
     },
   },

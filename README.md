@@ -83,7 +83,7 @@ modal de detalle, navegación con las teclas `←` `→`. Para agregar tus scree
 |---|---|
 | PiedPiper Carbon Hub (grupal) | `piedpiper-1.png` (dashboard), `piedpiper-2.png` (métricas de carbono), `piedpiper-3.png` (arquitectura / vista responsiva) |
 | Plataforma de Salud Digital (individual) | `ehr-1.png`, `ehr-2.png`, `ehr-3.png` |
-| Portafolio Profesional < AYV > (individual) | `portfolio-1.png`, `portfolio-2.png` |
+| CosCraft Planner (individual) | `CrossCraft-1.png`, `CrossCraft-2.png` |
 
 Mientras un archivo no exista, esa vista muestra un placeholder lila (`#EDE9FE`, borde punteado
 `#C4B5FD`) con el número de vista (`Vista 1 / 3`) y la ruta exacta esperada. Para cambiar

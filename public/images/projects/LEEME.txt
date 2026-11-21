@@ -13,9 +13,10 @@ Plataforma de Salud Digital (individual)
   ehr-2.png
   ehr-3.png
 
-Portafolio Profesional < AYV > (individual)
-  portfolio-1.png
-  portfolio-2.png
+CosCraft Planner (individual)
+  CrossCraft-1.png
+  CrossCraft-2.png
+  (ojo: GitHub Pages distingue mayusculas, el nombre debe ser exacto)
 
 Mientras un archivo no exista, el carrusel muestra un placeholder
 lila con la ruta exacta esperada. Para cambiar nombres, cantidad de
