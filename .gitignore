@@ -28,3 +28,6 @@ pnpm-debug.log*
 # Variables de entorno
 .env
 .env.local
+
+# Archivos de entrega (solo locales)
+entrega/
