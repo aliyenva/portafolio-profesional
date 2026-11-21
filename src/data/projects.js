@@ -42,7 +42,7 @@ export const projects = [
       '/images/projects/ehr-2.png',
       '/images/projects/ehr-3.png',
     ],
-    links: [],
+    links: [{ label: 'GitHub Repo', url: 'https://github.com/aliyenva/ProyectoEstructuras-EHR' }],
     tags: ['C++17', 'Red-Black Trees', 'Linear Hashing', 'WinHTTP', 'MongoDB'],
     es: {
       title: 'Plataforma de Salud Digital e Historial Clínico Interconectado',
