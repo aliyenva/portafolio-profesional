@@ -15,7 +15,7 @@ export function LanguageProvider({ children }) {
   }, [])
 
   // t() devuelve el texto traducido a partir de una clave con notación de punto
-  // ej: t('nav.about')
+  // ej: t('nav.home')
   const t = useCallback(
     (key) => {
       const parts = key.split('.')

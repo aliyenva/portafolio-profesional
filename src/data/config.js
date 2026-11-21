@@ -2,9 +2,7 @@
 // CONFIGURACIÓN PERSONAL - edita estos valores con tus datos
 // ============================================================
 export const config = {
-  nombre: 'Alison',
-  apellido: '',
-  // Correo donde llegarán los mensajes del formulario de contacto
+  // Correo de contacto (enlace mailto)
   email: 'ayeungv@ucenfotec.ac.cr',
   // Número de WhatsApp en formato internacional SIN + ni espacios (ej: 50688887777)
   whatsapp: '50686644448',

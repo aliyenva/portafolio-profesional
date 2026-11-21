@@ -21,8 +21,6 @@
 
   /* ── Derivados del secundario (azul marino) ── */
   --secundario-claro:  #2C5282;
-  --secundario-suave:  #3B6A9E;
-  --secundario-dark:   #12263F;
 
   /* ── Derivados del acento (rosa) ── */
   --acento-claro:      #FBCFE8;
@@ -55,7 +53,6 @@
 
   /* ── Transiciones ── */
   --trans:      0.3s ease;
-  --trans-slow: 0.5s ease;
   --trans-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
   --header-alto: 72px;
@@ -165,16 +162,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   transform: translateY(-3px) scale(1.03);
 }
 
-.btn-ghost {
-  background: var(--principal-medio);
-  color: var(--secundario-claro);
-}
-.btn-ghost:hover {
-  background: var(--color-acento);
-  color: var(--blanco);
-  transform: translateY(-2px);
-}
-
 /* ── Focus ── */
 :focus-visible {
   outline: 3px solid var(--color-acento);
@@ -226,12 +213,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   100% { box-shadow: 0 0 0 0   rgba(244,114,182,0); }
 }
 
-/* Shimmer on cards */
-@keyframes shimmer {
-  from { background-position: -200% center; }
-  to   { background-position:  200% center; }
-}
-
 /* Scroll reveal */
 .reveal {
   opacity: 0;
@@ -243,21 +224,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   transform: translateY(0);
 }
 
-/* Stagger delay helpers */
-.reveal-d1 { transition-delay: 0.08s; }
-.reveal-d2 { transition-delay: 0.16s; }
-.reveal-d3 { transition-delay: 0.24s; }
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { transition: none; opacity: 1; transform: none; }
   * { animation: none !important; }
-}
-
-/* ── Star sparkle decorative SVG ── */
-.sparkle-icon {
-  display: inline-block;
-  animation: sparkle 3s linear infinite;
-  color: var(--color-acento);
 }

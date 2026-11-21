@@ -16,7 +16,6 @@ export const translations = {
         'Bilingüe (español nativo, inglés fluido) con casi 4 años de experiencia resolviendo incidentes críticos en entornos enterprise y SaaS, y en formación continua en desarrollo de software.',
       ctaProjects: 'Ver proyectos',
       ctaCv: 'Descargar CV',
-      scroll: 'Desliza para explorar',
     },
     about: {
       title: '¿Quién soy?',
@@ -175,7 +174,6 @@ export const translations = {
         'Bilingual (Spanish native, English fluent) with nearly 4 years of experience resolving critical incidents for enterprise and SaaS customers, and continuously growing as a software developer.',
       ctaProjects: 'View projects',
       ctaCv: 'Download CV',
-      scroll: 'Scroll to explore',
     },
     about: {
       title: 'Who am I?',
